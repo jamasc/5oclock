@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>its 5 o'clock somewhere</title>
+</head>
+<body>
+    <h1>Too early to drink?</h1>
+	
+	<button onclick="showMessage()">Prost</button>
+	
+	<p id="message"></p>
+	
+	<script>
+	
+		function randInt(max) {
+			return Math.floor(Math.random() * (max));
+		}
+	
+        function showMessage() {
+			cities = [['London, UK', 'Lisbon, Portugal', 'Dublin, Ireland', 'Reykjavik, Iceland', 'Casablanca, Morocco'], ['Paris, France', 'Berlin, Germany', 'Madrid, Spain', 'Rome, Italy', 'Amsterdam, Netherlands'], ['Athens, Greece', 'Cairo, Egypt', 'Helsinki, Finland', 'Jerusalem, Israel', 'Cape Town, South Africa'], ['Moscow, Russia', 'Nairobi, Kenya', 'Riyadh, Saudi Arabia', 'Istanbul, Turkey', 'Doha, Qatar'], ['Dubai, UAE', 'Baku, Azerbaijan', 'Muscat, Oman', 'Yerevan, Armenia', 'Tbilisi, Georgia'], ['Tashkent, Uzbekistan', 'Islamabad, Pakistan', 'Karachi, Pakistan', 'Dushanbe, Tajikistan', 'Ashgabat, Turkmenistan'], ['Almaty, Kazakhstan', 'Astana, Kazakhstan', 'Bishkek, Kyrgyzstan', 'Dhaka, Bangladesh', 'Thimphu, Bhutan'], ['Bangkok, Thailand', 'Jakarta, Indonesia', 'Hanoi, Vietnam', 'Phnom Penh, Cambodia', 'Ho Chi Minh City, Vietnam'], ['Beijing, China', 'Hong Kong, China', 'Singapore', 'Kuala Lumpur, Malaysia', 'Manila, Philippines'], ['Tokyo, Japan', 'Seoul, South Korea', 'Pyongyang, North Korea', 'Chita, Russia', 'Yakutsk, Russia'], ['Sydney, Australia', 'Melbourne, Australia', 'Brisbane, Australia', 'Port Moresby, Papua New Guinea', 'Honiara, Solomon Islands'], ['NoumÃ©a, New Caledonia', 'Pohnpei, Micronesia', 'Guadalcanal, Solomon Islands', 'Vladivostok, Russia', 'Magadan, Russia'], ['Suva, Fiji', 'Auckland, New Zealand', 'Tarawa, Kiribati', 'Funafuti, Tuvalu', 'Nauru'], ["Nuku'alofa, Tonga", 'Apia, Samoa', 'Tokelau, New Zealand', 'Enderbury, Kiribati', 'Phoenix Islands, Kiribati'], ['Kiritimati, Kiribati'], ['Anchorage, USA', 'Juneau, USA', 'Fairbanks, USA'], ['Los Angeles, USA', 'Vancouver, Canada', 'San Francisco, USA', 'Seattle, USA', 'Las Vegas, USA'], ['Denver, USA', 'Phoenix, USA', 'Salt Lake City, USA', 'Calgary, Canada', 'Edmonton, Canada'], ['Chicago, USA', 'Mexico City, Mexico', 'Houston, USA', 'Dallas, USA', 'Winnipeg, Canada'], ['New York, USA', 'Toronto, Canada', 'Miami, USA', 'Lima, Peru', 'BogotÃ¡, Colombia'], ['Caracas, Venezuela', 'Santo Domingo, Dominican Republic', 'La Paz, Bolivia', 'AsunciÃ³n, Paraguay', 'Halifax, Canada'], ['Buenos Aires, Argentina', 'SÃ£o Paulo, Brazil', 'Montevideo, Uruguay', 'BrasÃ\xadlia, Brazil', 'Santiago, Chile'], ['South Georgia and the South Sandwich Islands (UK)', 'Fernando de Noronha, Brazil', 'King Edward Point, South Georgia and the South Sandwich Islands (UK)', 'Grytviken, South Georgia and the South Sandwich Islands (UK)', 'Tristan da Cunha, Saint Helena, Ascension and Tristan da Cunha (UK)'], ['Azores, Portugal', 'Cabo Verde', 'Ittoqqortoormiit, Greenland', 'Santa Cruz das Flores, Azores', 'Praia, Cape Verd']]
+            const now = new Date();
+            const utcHour = now.getUTCHours();
+			targetZone = (41 - utcHour) % 24
+			n = cities[targetZone].length
+			k = randInt(n)
+            document.getElementById('message').innerText = `It is 5pm in ${cities[targetZone][k]} right now!`;
+        }
+		
+		
+    </script>
+</body>
+</html>
